@@ -2,6 +2,7 @@ package eureka
 
 import (
 	"encoding/json"
+	"fmt"
 	"strings"
 )
 
@@ -12,6 +13,7 @@ func (c *Client) RegisterInstance(appId string, instanceInfo *InstanceInfo) erro
 		Instance: instanceInfo,
 	}
 	body, err := json.Marshal(instance)
+	fmt.Println(string(body))
 	if err != nil {
 		return err
 	}

@@ -114,6 +114,7 @@ func NewInstanceInfo(hostName, app, ip string, port int, ttl uint, isSsl bool) *
 		EvictionDurationInSecs: ttl,
 	}
 	instanceInfo := &InstanceInfo{
+		InstanceID:     ip + ":" + app + ":" + strconv.Itoa(port),
 		HostName:       hostName,
 		App:            app,
 		IpAddr:         ip,
